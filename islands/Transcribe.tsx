@@ -62,18 +62,16 @@ export default function Transcribe() {
         </div>
 
         <div>
-          {!transcriber.isBusy && (
-            <FileUpload
-              onFileUpdate={(decoded, blobUrl, mimeType) => {
-                setAudioData({
-                  buffer: decoded,
-                  url: blobUrl,
-                  source: "FILE",
-                  mimeType: mimeType,
-                });
-              }}
-            />
-          )}
+          <FileUpload
+            onFileUpdate={(decoded, blobUrl, mimeType) => {
+              setAudioData({
+                buffer: decoded,
+                url: blobUrl,
+                source: "FILE",
+                mimeType: mimeType,
+              });
+            }}
+          />
         </div>
       </section>
 
