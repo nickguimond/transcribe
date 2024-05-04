@@ -11,8 +11,9 @@ export function useWorker(messageEventHandler: MessageEventHandler): Worker {
 }
 
 function createWorker(messageEventHandler: MessageEventHandler): Worker {
+  const host = window.location.host;
   const worker = new Worker(
-    new URL("./worker.js", import.meta.url),
+    new URL(`https://${host}/worker.js`, import.meta.url),
     {
       type: "module",
     },
